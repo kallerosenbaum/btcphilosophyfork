@@ -49,9 +49,9 @@ MathJax.Hub.Config({
 </li>
 <li><a href="#decentralization">1. Decentralization</a>
 <ul class="sectlevel2">
-<li><a href="#_miner_decentralization">1.1. Miner decentralization</a></li>
-<li><a href="#_full_node_decentralization">1.2. Full node decentralization</a></li>
-<li><a href="#_neutrality">1.3. Neutrality</a></li>
+<li><a href="#minerdecentralization">1.1. Miner decentralization</a></li>
+<li><a href="#fullnodedecentralization">1.2. Full node decentralization</a></li>
+<li><a href="#neutrality">1.3. Neutrality</a></li>
 <li><a href="#_grokking_decentralization">1.4. Grokking decentralization</a></li>
 </ul>
 </li>
@@ -65,7 +65,7 @@ MathJax.Hub.Config({
 <li><a href="#_what_does_privacy_mean">3.1. What does privacy mean?</a></li>
 <li><a href="#whyprivacyimportant">3.2. Why is privacy important?</a></li>
 <li><a href="#pseudonymity">3.3. Pseudonymity</a></li>
-<li><a href="#_blockchain_privacy">3.4. Blockchain privacy</a></li>
+<li><a href="#blockchainprivacy">3.4. Blockchain privacy</a></li>
 <li><a href="#nonblockchainprivacy">3.5. Non-blockchain privacy</a></li>
 <li><a href="#fungibility">3.6. Fungibility</a></li>
 <li><a href="#privacymeasures">3.7. Privacy measures</a></li>
@@ -100,16 +100,16 @@ MathJax.Hub.Config({
 <li><a href="#adversarialthinking">6. Adversarial thinking</a>
 <ul class="sectlevel2">
 <li><a href="#_not_only_for_bitcoin_experts">6.1. Not only for Bitcoin experts</a></li>
-<li><a href="#_threats">6.2. Threats</a></li>
+<li><a href="#threats">6.2. Threats</a></li>
 </ul>
 </li>
 <li><a href="#opensource">7. Open Source</a>
 <ul class="sectlevel2">
-<li><a href="#_software_maintenance">7.1. Software maintenance</a></li>
+<li><a href="#softwaremaintenance">7.1. Software maintenance</a></li>
 <li><a href="#_permissionless_development">7.2. Permissionless development</a></li>
 <li><a href="#_pseudonymous_development">7.3. Pseudonymous development</a></li>
 <li><a href="#selectioncryptography">7.4. Selection cryptography</a></li>
-<li><a href="#_review">7.5. Review</a></li>
+<li><a href="#review">7.5. Review</a></li>
 <li><a href="#_funding">7.6. Funding</a></li>
 <li><a href="#_culture_shock">7.7. Culture shock</a></li>
 </ul>
@@ -119,10 +119,10 @@ MathJax.Hub.Config({
 <li><a href="#_history">8.1. History</a></li>
 <li><a href="#_scaling_approaches">8.2. Scaling approaches</a>
 <ul class="sectlevel3">
-<li><a href="#_vertical_scaling">8.2.1. Vertical scaling</a></li>
+<li><a href="#verticalscaling">8.2.1. Vertical scaling</a></li>
 <li><a href="#_horizontal_scaling">8.2.2. Horizontal scaling</a></li>
 <li><a href="#_inward_scaling">8.2.3. Inward scaling</a></li>
-<li><a href="#_layered_scaling">8.2.4. Layered scaling</a></li>
+<li><a href="#layeredscaling">8.2.4. Layered scaling</a></li>
 </ul>
 </li>
 </ul>
@@ -171,13 +171,13 @@ MathJax.Hub.Config({
 <h2 id="readme"><a class="anchor" href="#readme"></a>About this book</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><em>Bitcoin Development Philosophy</em> is a guide for new Bitcoin developers
+<p><em>Bitcoin Development Philosophy</em> is a guide for Bitcoin developers
 who already understand the basics of concepts and processes such as Proof-of-Work, block
 building, and the transaction life cycle, and who want to level up by
 gaining a deeper understanding of Bitcoin&#8217;s design trade-offs and
 philosophy. It should help new developers absorb the most important
-lessons of over a decade of Bitcoin development and discussion, and provide
-a context for evaluating new ideas (good ones and bad ones!).</p>
+lessons of over a decade of Bitcoin development and public debate, while providing them with
+a useful context for evaluating new ideas (good ones and bad ones!).</p>
 </div>
 <div class="paragraph">
 <p>Table of contents overview:</p>
@@ -207,49 +207,48 @@ building and contributing can be found in <a href="#appendixbuild">Appendix B</a
 <div class="sect2">
 <h3 id="_what_to_expect"><a class="anchor" href="#_what_to_expect"></a>What to expect?</h3>
 <div class="paragraph">
-<p>Bitcoin is a huge subject and we couldn&#8217;t possibly cover all of its aspects here. Nevertheless, we
-hope to discuss the necessary features to get you started as well as to enable you to further explore it on your own.</p>
+<p>As stated above, this is a practical guide for Bitcoin developers. However, Bitcoin is a broad and complex subject and we couldn&#8217;t possibly cover all of its aspects here. With this book, we
+hope to discuss the necessary features to get your development activity started as well as to enable you to further explore it on your own.</p>
 </div>
 <div class="paragraph">
-<p>There are lots of people involved in Bitcoin; as some of them have opposing opinions,
-there are resources that express contradictory ideas. However, we always
-attempt to stick to the facts, where opinions do not matter.</p>
+<p>There are lots of people involved in Bitcoin; as some of them have opposing opinions, here you may find
+resources that express contradictory ideas. However, we always
+attempt to stick to the domain of facts, where opinions do not matter.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_who_wrote_this"><a class="anchor" href="#_who_wrote_this"></a>Who wrote this?</h3>
 <div class="paragraph">
 <p>The main author of this book is Kalle Rosenbaum, and Linnéa Rosenbaum contributed as a co-author. This work
-was commissioned and funded by Chaincode Labs, a development center that runs educational
-programs for developers who want to <a href="https://learning.chaincode.com/">learn</a> about Bitcoin development.</p>
+was commissioned and funded by <a href="https://learning.chaincode.com/">Chaincode Labs</a>, a development center that runs educational
+programs for developers who want to learn about Bitcoin development.</p>
 </div>
 <div class="paragraph">
-<p>Kalle is the author of <a href="https://rosenbaum.se/book/">&#8220;Grokking Bitcoin&#8221;</a> (Manning Publications) and is a
+<p>Kalle is the author of <a href="https://rosenbaum.se/book/"><em>Grokking Bitcoin</em></a> (Manning Publications) and is a
 seasoned software developer. He&#8217;s been working professionally with Bitcoin-related development since
 2015.</p>
 </div>
 <div class="paragraph">
-<p>Linnéa has a Ph.D. in Electronic Systems. She is the Swedish translator of <a href="https://konsensus.network/product/lilla-boken-om-bitcoin/">&#8220;The Little Bitcoin Book&#8221;</a> and co-translator of <a href="https://konsensus.network/product/sverige-bitcoinstandarden/">&#8220;The Bitcoin Standard&#8221;</a>.  She is  also on the board of the Swedish Bitcoin Association. Her background is in firmware development with a recent shift towards software development.</p>
+<p>Linnéa has a Ph.D. in Electronic Systems. She is the Swedish translator of <a href="https://konsensus.network/product/lilla-boken-om-bitcoin/"><em>The Little Bitcoin Book</em></a> and co-translator of <a href="https://konsensus.network/product/sverige-bitcoinstandarden/"><em>The Bitcoin Standard</em></a>.  She is also on the board of the Swedish Bitcoin Association. Her background is in firmware development with a recent shift towards software development.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_how_is_this_organized"><a class="anchor" href="#_how_is_this_organized"></a>How is this organized?</h3>
 <div class="paragraph">
-<p>The book is sectioned into chapters covering different topics. Each
-chapter will guide you through a number of links to articles or
-videos that we recommend reading, and will briefly discuss each
-link. The reported material was written by individuals who have
+<p>The book is sectioned into chapters, each covering a pivotal topic within Bitcoin. Every
+chapter guides you through the relevant information related to the chapter&#8217;s focus, with the addition of links and QR codes that will take you to articles or
+videos that we recommend reading or watching. The reported material was written by individuals who have
 studied Bitcoin development for a long time.</p>
 </div>
 <div class="paragraph">
 <p>The links refer to external resources on platforms we cannot
 control. We have therefore saved the linked articles locally in this
-repository, along with info on where it was copied from, and when. The
+repository, along with the information on where it was copied from and when. The
 resources are collected in <a href="sources/sources.html">a separate
 document</a> (<code>sources/sources.adoc</code>) and organized by the chapter they are
-linked from. The links found in the chapters refer to the original
-sources, but if you don&#8217;t have an internet connection, the links
-appear dead, or the content seems severely changed, you can read the
+linked to. The links found in the chapters refer to the original
+sources, which should be found online, but in case you don&#8217;t have an internet connection, the links
+appear dead, or the information seems severely changed, you can read the
 content locally instead.</p>
 </div>
 </div>
@@ -291,7 +290,7 @@ the edge of the network, ultimately by its users, and not by a few
 trusted authorities.</p>
 </div>
 <div class="sect2">
-<h3 id="_miner_decentralization"><a class="anchor" href="#_miner_decentralization"></a>1.1. Miner decentralization</h3>
+<h3 id="minerdecentralization"><a class="anchor" href="#minerdecentralization"></a>1.1. Miner decentralization</h3>
 <div class="paragraph">
 <p>There had been attempts at creating digital currencies before Bitcoin,
 but most of them failed due to a lack of governance decentralization
@@ -301,17 +300,17 @@ and censorship resistance.</p>
 <p>Miner decentralization in Bitcoin means that the <em>ordering of
 transactions</em> isn&#8217;t carried out by any single entity or fixed set of
 entities. It&#8217;s carried out collectively by all the actors who want
-to participate in it; this miners' collective is a dynamic set of users. Anyone can
+to participate in it; this miners&#8217; collective is a dynamic set of users. Anyone can
 join or leave as they wish. This property makes Bitcoin censorship-resistant.</p>
 </div>
 <div class="paragraph">
-<p>If Bitcoin were centralized, it would be vulnerable to those who wished
-to censor it, such as governments. It would meet the same fate as earlier
-attempts to create digital money. In the introduction of
+<p>If Bitcoin were centralized, it would be vulnerable to those who
+wished to censor it, such as governments. It would meet the same fate
+as earlier attempts to create digital money. In the introduction of
 <a href="https://www.blockstream.com/sidechains.pdf">a paper</a> titled &#8220;Enabling
-Blockchain Innovations with Pegged Sidechains&#8221;, the authors
-explain how early versions of digital money weren&#8217;t
-equipped for an <a href="#adversarialthinking">adversarial environment</a>:</p>
+Blockchain Innovations with Pegged Sidechains&#8221;, the authors explain
+how early versions of digital money weren&#8217;t equipped for an
+adversarial environment (see also <a href="#adversarialthinking">Chapter 6</a>):</p>
 </div>
 <div class="quoteblock">
 <blockquote>
@@ -410,7 +409,7 @@ goes on to explain how proof-of-work is the solution. Still, no one
 explains it better than
 <a href="https://www.reddit.com/r/Bitcoin/comments/ddddfl/question_on_the_vulnerability_of_bitcoin/f2g9e7b/">Gregory
 Maxwell on Reddit</a>, where he responds to someone who proposes to limit
-miners' hash power to avoid potential 51% attacks:</p>
+miners&#8217; hash power to avoid potential 51% attacks:</p>
 </div>
 <div id="one-cpu-one-vote" class="quoteblock">
 <blockquote>
@@ -459,7 +458,7 @@ decentralization.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_full_node_decentralization"><a class="anchor" href="#_full_node_decentralization"></a>1.2. Full node decentralization</h3>
+<h3 id="fullnodedecentralization"><a class="anchor" href="#fullnodedecentralization"></a>1.2. Full node decentralization</h3>
 <div class="paragraph">
 <p>In the paragraphs above, we&#8217;ve mostly talked about miner decentralization and how
 centralizating miners can allow for censorship. But there&#8217;s also another
@@ -467,7 +466,7 @@ aspect of decentralization, namely <em>full node decentralization</em>.</p>
 </div>
 <div class="paragraph">
 <p>The importance of full node decentralization is related to
-<a href="#trustlessness">trustlessness</a>. Suppose a user stops running their own
+trustlessness (see <a href="#trustlessness">Chapter 2</a>). Suppose a user stops running their own
 full node due to, for example, a prohibitive increase in the cost of
 operation. In that case, they have to interact with the Bitcoin network in some
 other way, possibly by using web wallets or lightweight wallets, which requires a certain level of trust in the providers of these services.
@@ -488,7 +487,7 @@ throughput.</p>
 </div>
 <div class="paragraph">
 <p>A powerful argument against increasing the block size is that it
-increases the cost of verification (see <a href="#_vertical_scaling">the
+increases the cost of verification (see <a href="#verticalscaling">the
 Scaling chapter</a>). If verification cost rises, it will push some
 users to stop running their full nodes. This, in turn, will lead to
 more people not being able to use the system in a
@@ -520,7 +519,7 @@ the consensus rules.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_neutrality"><a class="anchor" href="#_neutrality"></a>1.3. Neutrality</h3>
+<h3 id="neutrality"><a class="anchor" href="#neutrality"></a>1.3. Neutrality</h3>
 <div class="paragraph">
 <p>Bitcoin is neutral, or permissionless, as people like to call it. This
 means that Bitcoin doesn&#8217;t care who you are or what you use it for.</p>
@@ -702,8 +701,8 @@ trade-offs between convenience and trustlessness to get anything done
 at all.</p>
 </div>
 <div class="paragraph">
-<p>People often say things like "Bitcoin is great because it&#8217;s
-trustless". What do they mean by trustless? Pieter Wuille explains
+<p>People often say things like &#8220;Bitcoin is great because it&#8217;s
+trustless&#8221;. What do they mean by trustless? Pieter Wuille explains
 this widely used term on
 <a href="https://bitcoin.stackexchange.com/a/45674/69518">Stack Exchange</a>:</p>
 </div>
@@ -722,8 +721,8 @@ require any trusted parties to function correctly.</p>
 </div>
 <div class="paragraph">
 <p>In short, the word <em>trustless</em> refers to a property of the Bitcoin
-protocol whereby it can logically function without "any trusted
-parties". This is different from the trust you inevitably have to
+protocol whereby it can logically function without &#8220;any trusted
+parties&#8221;. This is different from the trust you inevitably have to
 put into the software or hardware you run. More on this latter aspect of trust will be discussed further
 in this chapter.</p>
 </div>
@@ -845,7 +844,7 @@ acceptable.</p>
 </div>
 <div class="paragraph">
 <p>The incentives for using Bitcoin in a trustless way align with the
-system&#8217;s need for <a href="#_full_node_decentralization">full node
+system&#8217;s need for <a href="#fullnodedecentralization">full node
 decentralization</a>. The more people who use their own full nodes, the
 more full node decentralization, and thus the stronger Bitcoin stands
 against malicious changes to the protocol. But unfortunately, as
@@ -899,7 +898,7 @@ keys to some bad actor.</p>
 running what you intend to. Reddit user brianddk
 <a href="https://www.reddit.com/r/Bitcoin/comments/smj1ep/bitcoin_v220_and_guix_stronger_defense_against/">wrote
 an article</a> about the various levels of trust you can choose from, when
-verifying your software. In the section "Trusting the builders", he
+verifying your software. In the section &#8220;Trusting the builders&#8221;, he
 talks about <em>reproducible builds</em>:</p>
 </div>
 <div class="quoteblock">
@@ -996,7 +995,7 @@ towards trustlessness. Also, as users gain more knowledge over time,
 they should be able to gradually remove trust from the equation.</p>
 </div>
 <div class="paragraph">
-<p>Some users <a href="#adversarialthinking">think adversarially</a> and verify
+<p>Some users think adversarially (see <a href="#adversarialthinking">Chapter 6</a>) and verify
 most aspects of the software they run. As a consequence, they reduce the need for trust to the bare minimum,
 as they only need to trust their computer hardware and operating system. In
 doing so, they also help people who don&#8217;t verify their hardware as thoroughly by
@@ -1207,7 +1206,7 @@ blockchain bloat, and making it harder to impersonate other people.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_blockchain_privacy"><a class="anchor" href="#_blockchain_privacy"></a>3.4. Blockchain privacy</h3>
+<h3 id="blockchainprivacy"><a class="anchor" href="#blockchainprivacy"></a>3.4. Blockchain privacy</h3>
 <div class="paragraph">
 <p>Blockchain privacy refers to the information you disclose by
 transacting on the blockchain. It applies to all transactions,
@@ -1217,7 +1216,7 @@ the ones you send as well as the ones you receive.</p>
 <p>Satoshi Nakamoto ponders over on-chain privacy in section 7 of his
 <a href="https://bitcoin.org/bitcoin.pdf">Bitcoin whitepaper</a>:</p>
 </div>
-<div id="satoshi-unique-addresses" class="quoteblock">
+<div class="quoteblock">
 <blockquote>
 <div class="paragraph">
 <p>As an additional firewall, a new key pair should be used for each
@@ -1250,7 +1249,7 @@ to the same user.</p>
 <a href="https://en.bitcoin.it/Privacy#Blockchain_attacks_on_privacy">wrote in
 great detail</a> about the different kinds of privacy leaks that can
 happen on the Bitcoin blockchain. We recommend you read at least
-the first few subsections under "Blockchain attacks on privacy."</p>
+the first few subsections under &#8220;Blockchain attacks on privacy.&#8221;</p>
 </div>
 <div class="paragraph">
 <p>The takeaway is that privacy in Bitcoin isn&#8217;t perfect. It requires a
@@ -1298,8 +1297,8 @@ there are plenty of other leaks that don&#8217;t use the blockchain, some
 sneakier than others. These range from key-loggers to network traffic
 analysis. To read up on some of these methods, please refer again to
 <a href="https://en.bitcoin.it/Privacy#Non-blockchain_attacks_on_privacy">Chris
-Belcher&#8217;s piece</a>, specifically the section "Non-blockchain attacks on
-privacy".</p>
+Belcher&#8217;s piece</a>, specifically the section &#8220;Non-blockchain attacks on
+privacy&#8221;.</p>
 </div>
 <div class="paragraph">
 <p>Among a plethora of attacks, Belcher mentions the possibility of
@@ -1421,7 +1420,7 @@ talk about either of them in isolation.</p>
 <div class="paragraph">
 <p>Several techniques have been developed to help people protecting themselves from privacy
 leaks. Among the most obvious ones is, as
-<a href="#satoshi-unique-addresses">noted by Nakamoto</a> above, using unique
+noted by Nakamoto&gt;&gt; in <a href="#blockchainprivacy">Section 3.4</a>, using unique
 addresses for every transaction, but several others exist. We&#8217;re not
 going to teach you how to become a privacy ninja. However, Bitcoin Q+A has
 a quick summary of privacy-enhancing technologies, somewhat ordered by
@@ -1493,13 +1492,13 @@ Bitcoin, as is the case with Lightning Network:</p>
 <div class="title">Figure 4. Layers on top of Bitcoin can add privacy.</div>
 </div>
 <div class="paragraph">
-<p>We noted in <a href="#trustlessness">Trustlessness</a> that the need for trust
+<p>We noted in <a href="#trustlessness">Chapter 2</a> that the need for trust
 can only increase with layers on top, but that doesn&#8217;t seem to be the
 case for privacy, which can be improved or made worse arbitrarily in
 layers on top. Why is that? Any layer on top of Bitcoin, as explained
-in <a href="#_layered_scaling">Section 8.2.4</a>, must use on-chain
-transactions occasionally, otherwise it wouldn&#8217;t be "on top of
-Bitcoin". Privacy-enhancing layers generally try to use the base layer
+in <a href="#layeredscaling">Section 8.2.4</a>, must use on-chain
+transactions occasionally, otherwise it wouldn&#8217;t be &#8220;on top of
+Bitcoin&#8221;. Privacy-enhancing layers generally try to use the base layer
 as little as possible to minimize the amount of information revealed.</p>
 </div>
 <div class="paragraph">
@@ -1543,7 +1542,7 @@ and instead trade in private, or use decentralized exchanges like
 </div>
 <div class="paragraph">
 <p>For more in-depth reading about countermeasures, refer to the
-previously mentioned <a href="https://en.bitcoin.it/wiki/Privacy#Methods_for_improving_privacy_.28non-blockchain.29">wiki article on privacy</a>, starting at "Methods for improving privacy (non-blockchain)".</p>
+previously mentioned <a href="https://en.bitcoin.it/wiki/Privacy#Methods_for_improving_privacy_.28non-blockchain.29">wiki article on privacy</a>, starting at &#8220;Methods for improving privacy (non-blockchain)&#8221;.</p>
 </div>
 </div>
 <div class="sect2">
@@ -1714,7 +1713,7 @@ the “total increase in M2 in 2017”.</p>
 </div>
 <div class="paragraph">
 <p>Today, it is holders who pay for security (via monetary inflation). Tomorrow
-it will be the spenders' turn to somehow shoulder this burden, as
+it will be the spenders&#8217; turn to somehow shoulder this burden, as
 illustrated below.</p>
 </div>
 <div class="imageblock">
@@ -2066,9 +2065,9 @@ obliged to proclaim in public their views on a certain soft fork, as if that
 gave weight to the proposal.</p>
 </div>
 <div class="paragraph">
-<p>The UASF proposal is, in a nutshell, a "flag day" on which nodes
+<p>The UASF proposal is, in a nutshell, a &#8220;flag day&#8221; on which nodes
 start enforcing specific new rules. That way, miners don&#8217;t have to
-make a collective effort to coordinate the upgrade, and can even trigger activation
+make a collective effort to coordinate the upgrade, but <em>can</em> trigger activation
 earlier than the flag day if enough blocks signal support.</p>
 </div>
 <div class="quoteblock">
@@ -2229,7 +2228,7 @@ as Bitcoin continues to grow.</p>
 <div class="sect3">
 <h4 id="taproot-deployment"><a class="anchor" href="#taproot-deployment"></a>5.2.3. Taproot upgrade - Speedy Trial</h4>
 <div class="paragraph">
-<p>When Taproot was ready for deployment [comm: add time coordinates], meaning all the technical details
+<p>When Taproot was ready for deployment in October 2020, meaning all the technical details
 around its consensus rules had been implemented and had reached broad
 approval within the community, discussions on how to actually deploy it
 started to heat up. These discussions had been pretty low key up until
@@ -2281,6 +2280,10 @@ BIP8. This provides a common factor to use for categorizing many
 different proposals.</p>
 </div>
 </blockquote>
+<div class="attribution">
+&#8212; David Harding<br>
+<cite>Taproot Activation Proposals on the Bitcoin Wiki (2020)</cite>
+</div>
 </div>
 <div class="paragraph">
 <p>From this point forward the discussions became very heated, especially
@@ -2330,7 +2333,7 @@ something changed:</p>
 </div>
 <div class="paragraph">
 <p>The &#8220;let&#8217;s see what happens&#8221; approach finally seemed to click in
-peoples' minds. This process would later be labeled as &#8220;Speedy Trial&#8221;
+peoples&#8217; minds. This process would later be labeled as &#8220;Speedy Trial&#8221;
 due to its short signaling period. David Harding explains this idea
 to the broader community in an
 <a href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2021-March/018583.html">email
@@ -2637,7 +2640,7 @@ best to use Bitcoin in a trustless manner.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_threats"><a class="anchor" href="#_threats"></a>6.2. Threats</h3>
+<h3 id="threats"><a class="anchor" href="#threats"></a>6.2. Threats</h3>
 <div class="paragraph">
 <p>There are a lot of known weaknesses in Bitcoin, and many of them are
 actively being exploited. To get a glimpse of that, have a look at the
@@ -2668,7 +2671,7 @@ as multiple entities.</p>
 <div class="paragraph">
 <p>As the quote also mentions, the Sybil attack is not effective on the
 Bitcoin network because there is no voting through nodes or other numerable entities, but rather
-<a href="#one-cpu-one-vote">through computing power</a>. Nonetheless, this flat
+through computing power (see <a href="#minerdecentralization">Section 1.1</a>). Nonetheless, this flat
 structure leaves the system susceptible to other attacks.
 The Bitcoin wiki page also outlines other possible attacks, such as information hiding
 (often referred to as <em>eclipse attack</em>), and the way Bitcoin Core implements
@@ -2861,7 +2864,7 @@ some other interesting aspects of open source software in
 Bitcoin.</p>
 </div>
 <div class="sect2">
-<h3 id="_software_maintenance"><a class="anchor" href="#_software_maintenance"></a>7.1. Software maintenance</h3>
+<h3 id="softwaremaintenance"><a class="anchor" href="#softwaremaintenance"></a>7.1. Software maintenance</h3>
 <div class="paragraph">
 <p>Bitcoin Core&#8217;s source code is maintained in a Git repository hosted on
 <a href="https://github.com/bitcoin/bitcoin">GitHub</a>. Anyone can clone that very
@@ -2943,7 +2946,7 @@ itself.</p>
 <div class="paragraph">
 <p>It should be noted that pull requests can take a very long time
 before being merged to the repository by maintainers, and that&#8217;s usually due to a lack
-of review, which is often due to a <a href="#_review">lack of <em>reviewers</em></a>.</p>
+of review, see <a href="#review">Section 7.5</a>, which is often due to a lack of <em>reviewers</em>.</p>
 </div>
 <div class="paragraph">
 <p>Lombrozo also talks about the process that surrounds consensus changes, but that&#8217;s a
@@ -2981,8 +2984,8 @@ transactions. Various inter-operable implementations exist, such as
 <dt class="hdlist1">CoinJoin</dt>
 <dd>
 <p>Multiple parties collaborate to combine their payments into
-a single transaction to make <a href="#_blockchain_privacy">address
-clustering</a> harder. Various implementations exist.</p>
+a single transaction to make address clustering
+(explained in <a href="#blockchainprivacy">Section 3.4</a>) harder. Various implementations exist.</p>
 </dd>
 <dt class="hdlist1">Sidechains</dt>
 <dd>
@@ -3002,7 +3005,7 @@ that timestamp to prove that a document must have existed prior to a certain tim
 </div>
 <div class="paragraph">
 <p>Without permissionless development, many of these projects would
-not have been possible. As stated in <a href="#_neutrality">Section 1.3</a>,
+not have been possible. As stated in <a href="#neutrality">Section 1.3</a>,
 if developers had to ask for permission to build protocols on top of
 Bitcoin, only the protocols allowed by the central developer granting committee
 would be developed.</p>
@@ -3196,7 +3199,7 @@ from font rendering to implementation of system calls.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_review"><a class="anchor" href="#_review"></a>7.5. Review</h3>
+<h3 id="review"><a class="anchor" href="#review"></a>7.5. Review</h3>
 <div class="paragraph">
 <p>This section is named &#8220;Review&#8221;, rather than &#8220;Code review&#8221;, because
 Bitcoin&#8217;s security relies heavily on review at multiple levels, not
@@ -3357,7 +3360,7 @@ and endless heated debates among Bitcoin developers, and that they are
 incapable of making decisions.</p>
 </div>
 <div class="paragraph">
-<p>For example, the <a href="#taproot-deployment">Taproot deployment mechanism</a>
+<p>For example, the Taproot deployment mechanism, described in <a href="#taproot-deployment">Section 5.2.3</a>,
 was discussed over a long period of time during which two &#8220;camps&#8221; formed. One
 wanted to &#8220;fail&#8221; the upgrade if miners hadn&#8217;t overwhelmingly
 voted for the new rules after a certain moment, while the other
@@ -3426,7 +3429,7 @@ healthy environment, and even that it is necessary for producing the best
 outcome.</p>
 </div>
 <div class="paragraph">
-<p>As hinted in <a href="#sabotage">the Adversarial thinking chapter</a>, the second
+<p>As hinted in <a href="#threats">Section 6.2</a>, the second
 bullet above can be very beneficial but comes with a downside. An attacker could use stalling
 tactics, like the ones outlined in the <a href="https://www.gutenberg.org/ebooks/26184">Simple
 Sabotage Field Manual</a>, to distort the decision making and development
@@ -3439,7 +3442,7 @@ of money, security in this context is not taken lightly. This is why seasoned Bi
 developers might appear very hard-headed, which attitude is
 usually warranted. Indeed, a feature with a weak rationale behind it is not going to be
 accepted. The same would happen if it broke the
-<a href="#donttrustverify">reproducible builds</a>, added new dependencies, or
+reproducible builds (described in <a href="#donttrustverify">Section 2.1</a>), added new dependencies, or
 if the code didn&#8217;t follow Bitcoin&#8217;s
 <a href="https://github.com/bitcoin/bitcoin/blob/master/doc/developer-notes.md">best
 practices</a>.</p>
@@ -3607,7 +3610,7 @@ throughput-decentralization trade-off mentioned in the previous
 section.</p>
 </div>
 <div class="sect3">
-<h4 id="_vertical_scaling"><a class="anchor" href="#_vertical_scaling"></a>8.2.1. Vertical scaling</h4>
+<h4 id="verticalscaling"><a class="anchor" href="#verticalscaling"></a>8.2.1. Vertical scaling</h4>
 <div class="paragraph">
 <p>Vertical scaling is the process of increasing the computing resources
 of the machines processing data. In the context of Bitcoin, these latter would be
@@ -3621,12 +3624,12 @@ block size limit. This would require some full nodes to upgrade their
 hardware to keep up with the increasing computational
 demands. The downside is that it happens at the cost of
 centralization, as was discussed in the previous section and more
-in depth in <a href="#_full_node_decentralization">Section 1.2</a>.</p>
+in depth in <a href="#fullnodedecentralization">Section 1.2</a>.</p>
 </div>
 <div class="paragraph">
 <p>Besides the negative effects on full node decentralization, vertical
 scaling might also negatively impact Bitcoin&#8217;s
-<a href="#_miner_decentralization">mining decentralization</a> and security in
+mining decentralization (explained in <a href="#minerdecentralization">Section 1.1</a>) and security in
 less obvious ways. Let&#8217;s have a look at how miners &#8220;should&#8221;
 operate. Say a miner mines a block at height 7 and publishes that
 block on the Bitcoin network. It will take some time for this block to
@@ -3671,7 +3674,7 @@ scenario. The measures they can take include:</p>
 <ul>
 <li>
 <p>Postponing the validation of an incoming block, also known as
-<a href="#bip66splits"><em>validationless mining</em></a>. Miners can just check the block
+<em>validationless mining</em>, further discussed in <a href="#bip66splits">Section 9.2.4.4</a>. Miners can just check the block
 header&#8217;s proof-of-work and mine on top of it, while in the meantime they download the
 full block and validate it.</p>
 </li>
@@ -3682,17 +3685,17 @@ full block and validate it.</p>
 </div>
 <div class="paragraph">
 <p>Validationless mining further undermines
-<a href="#_full_node_decentralization">full node decentralization</a>,
-as the miner defers trusting
+full node decentralization,
+as the miner resorts to trusting
 incoming blocks, at least temporarily. It also hurts security to some degree because a
 portion of the network&#8217;s computing power is potentially building on an
 invalid blockchain, instead of building on the strongest and valid chain.</p>
 </div>
 <div class="paragraph">
 <p>The second bullet point has a negative effect on
-<a href="#_miner_decentralization">miner decentralization</a>, because usually
+miner decentralization, see <a href="#minerdecentralization">Section 1.1</a>, because usually
 the pools with the best network connectivity and
-bandwidth are also the largest and thus most centralized.</p>
+bandwidth are also the largest, causing miners to gravitate towards a few big pools.</p>
 </div>
 </div>
 <div class="sect3">
@@ -3890,7 +3893,7 @@ their UTXO sets.</p>
 </div>
 <div class="paragraph">
 <p>Unfortunately, however, these two techniques of <em>UTXO management</em> could
-be bad for your own or your payees' privacy. In the batching case, each
+be bad for your own or your payees&#8217; privacy. In the batching case, each
 payee will know that all the batched outputs are from you to other payees
 (except possibly the change). In the UTXO consolidation case, you will
 reveal that the outputs you consolidate belong to the same wallet. So
@@ -3898,7 +3901,7 @@ you may have to make a trade-off between cost efficiency and privacy.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_layered_scaling"><a class="anchor" href="#_layered_scaling"></a>8.2.4. Layered scaling</h4>
+<h4 id="layeredscaling"><a class="anchor" href="#layeredscaling"></a>8.2.4. Layered scaling</h4>
 <div class="paragraph">
 <p>The most impactful approach to scaling is probably layering. The
 general idea behind layering is that a protocol can settle payments
@@ -3938,7 +3941,7 @@ advanced scripting that would not be supported by the Bitcoin blockchain.</p>
 <p>We won&#8217;t detail how specific protocols work, but as
 you can see in <a href="#fig-scaling-layer">Figure 12</a>, the blockchain is rarely used
 during the protocol&#8217;s life cycle. All the juicy action happens
-<em>off-chain</em>. We&#8217;ve seen how this can be a win for <a href="#privacy">privacy</a>
+<em>off-chain</em>. We&#8217;ve seen how this can be a win for privacy
 if done right, but it can also be an advantage for scalability.</p>
 </div>
 <div class="paragraph">
@@ -4071,7 +4074,7 @@ a few days and several months.</p>
 <div class="paragraph">
 <p>This means that if you find a security issue, you should
 report this to the team responsible for the system. But what does this
-mean in the context of Bitcoin? As noted in <a href="#_software_maintenance">the Open source chapter</a>, no one controls Bitcoin, but there&#8217;s currently a
+mean in the context of Bitcoin? As noted in <a href="#softwaremaintenance">the Open source chapter</a>, no one controls Bitcoin, but there&#8217;s currently a
 focal point for Bitcoin development, namely the
 <a href="https://github.com/bitcoin/bitcoin">Bitcoin Core Github
 repository</a>. The maintainers of said repository are responsible for
@@ -4428,7 +4431,7 @@ patch or code was provided, maybe as a measure to obfuscate the issue.</p>
 <p>0.3.5 <a href="https://bitcointalk.org/index.php?topic=626.msg6455#msg6455">didn&#8217;t even work</a>.</p>
 </li>
 <li>
-<p>The fix in 0.3.6 was actually a <a href="#historic-upgrades">hard fork</a>.</p>
+<p>The fix in 0.3.6 was actually a hard fork, as explained in <a href="#historic-upgrades">Section 5.2</a>.</p>
 </li>
 </ul>
 </div>
@@ -4479,7 +4482,7 @@ unusually high value:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Presumably, there was a bug causing two int64 (not uint64, as Garzik supposed) outputs' sum
+<p>Presumably, there was a bug causing two int64 (not uint64, as Garzik supposed) outputs&#8217; sum
 to overflow to a negative value -0.00997538 BTC. Whatever the sum
 of the inputs, the &#8220;sum&#8221; of the outputs would be smaller, making
 this transaction OK according to the code at the time.</p>
@@ -4816,7 +4819,7 @@ ones here. Some of them have, as illustrated by
 the now widthdrawn BIP62, which was a proposal to reduce the
 possibilities of transaction malleability. Among the proposed changes
 in BIP62 were tightening of the consensus rules for the encoding of
-signatures, or "strict DER encoding". Pieter Wuille proposed some
+signatures, or &#8220;strict DER encoding&#8221;. Pieter Wuille proposed some
 tweaks to the BIP in July 2014, that would have solved the issue:</p>
 </div>
 <div class="quoteblock">
@@ -4867,7 +4870,7 @@ explains this in another
 reject some signatures, Bitcoin is a consensus system where all
 participants must generally agree on the exact validity or
 invalidity of the input data.  In a sense, consistency is more
-important than "correctness".</p>
+important than &#8220;correctness&#8221;.</p>
 </div>
 <div class="paragraph">
 <p>&#8230;&#8203;</p>
@@ -4890,7 +4893,7 @@ utilizing a subset of BIP62.</p>
 <p>He points out that using code that&#8217;s not intended for use in consensus
 systems poses serious risks, and proposes that Bitcoin implements
 strict DER encoding. This is a very clear example of the importance of
-<a href="#selectioncryptography">selection cryptography</a>.</p>
+good selection cryptography, a term we discussed in <a href="#selectioncryptography">Section 7.4</a>.</p>
 </div>
 <div class="paragraph">
 <p>These events might give you the impression that Gregory Maxwell knew
@@ -4999,7 +5002,7 @@ to play.</p>
 <h2 id="appendixdiscussion"><a class="anchor" href="#appendixdiscussion"></a>Appendix A: Discussion Questions</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>These discussion questions are not just a recap of the content in "Bitcoin development philosophy", they are meant to encourage you to research further so make sure to go out and explore.</p>
+<p>These discussion questions are not just a recap of the content in &#8220;Bitcoin development philosophy&#8221;, they are meant to encourage you to research further so make sure to go out and explore.</p>
 </div>
 <div class="sect2">
 <h3 id="_decentralization"><a class="anchor" href="#_decentralization"></a>A.1. Decentralization</h3>
@@ -5269,7 +5272,7 @@ command manually:</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-04-03 06:20:09 UTC
+Last updated 2023-04-16 08:20:58 UTC
 </div>
 </div>
 <script type="text/x-mathjax-config">
